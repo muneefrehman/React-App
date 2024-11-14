@@ -1,43 +1,36 @@
-import './App.css';
-import Info from './Info.js';
-import {useState} from "react";
+import { useState } from "react";
+import "./App.css";
+import SearchBar from "./SearchBar";
+import AddItem from "./AddItem";
+import ItemsDisplay from "./ItemsDisplay";
 
 function App() {
+  const [filters, setFilters] = useState({});
+  const [data, setData] = useState({ items: [] });
+
+  const updateFilters = (searchParams) => {
+    setFilters(searchParams);
+  };
+
+  const addItemToData = (item) => {
+    let items = data["items"];
+    item.id = items.length;
+    items.push(item);
+    setData({ items: items });
+    console.log(data);
+  };
+
   return (
-    <div className="App">
-      <Info />
-      <ButtonState />
-    </div>
-  );
-}
-
-function ButtonState() {
-
-  const [title, setTitle] = useState("");
-  const [count, setCount] = useState(0);
-
-  const updateTitleClicked = () => {
-    setTitle("We now have a title!");
-  }
-
-  const updateCounterClicked = () => {
-    setCount(count+1);
-  }
-
-  return(
-    <div>
-      <Data title={title} count={count} />
-      <button onClick={updateTitleClicked}>Update Title</button>
-      <button onClick={updateCounterClicked}>Update Counter</button>
-    </div>
-  );
-}
-
-function Data(props) {
-  return(
-    <div>
-      <p>Title: {props.title}</p>
-      <p>Count: {props.count}</p>
+    <div className="container">
+      <div className="row mt-3">
+        <ItemsDisplay items={data["items"]} />
+      </div>
+      <div className="row mt-3">
+        <SearchBar updateSearchParams={updateFilters} />
+      </div>
+      <div className="row mt-3">
+        <AddItem addItem={addItemToData} />
+      </div>
     </div>
   );
 }
