@@ -1,11 +1,25 @@
 {
   "items": [
     {
-      "id": "86c2",
+      "id": "f69b",
       "name": "Cookies",
       "price": "2.99",
       "type": "Raisins",
       "brand": "Original"
+    },
+    {
+      "id": "e256",
+      "name": "Cookies",
+      "price": "2.99",
+      "type": "Raisins",
+      "brand": "Original"
+    },
+    {
+      "id": "40a7",
+      "name": "Water",
+      "price": "3.99",
+      "type": "Still",
+      "brand": "Dasani"
     }
   ]
 }
