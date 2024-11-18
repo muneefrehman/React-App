@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### 'json-server db.json'
+### `json-server db.json`
 
 Starts up the database server on PORT 3000.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
